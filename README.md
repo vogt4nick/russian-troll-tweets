@@ -13,7 +13,20 @@ Per NBC News-
 
 I cleaned up the data and put together a data model. The data model is in an S3 bucket. You can download the tables:
 
-[Tweets](https://s3.amazonaws.com/russian-troll-tweets/data-model/tweets.csv)
-[Users](https://s3.amazonaws.com/russian-troll-tweets/data-model/users.csv)
-[Mentions](https://s3.amazonaws.com/russian-troll-tweets/data-model/mention_bridge.csv)
-[Hashtags](https://s3.amazonaws.com/russian-troll-tweets/data-model/hashtag_bridge.csv)
+- [tweets.csv](http://russian-troll-tweets.s3.amazonaws.com/data-model/tweets.csv)  
+- [users.csv](http://russian-troll-tweets.s3.amazonaws.com/data-model/users.csv)  
+- [mention-bridge.csv](http://russian-troll-tweets.s3.amazonaws.com/data-model/mention-bridge.csv)
+- [hashtag-bridge.csv](http://russian-troll-tweets.s3.amazonaws.com/data-model/hashtag-bridge.csv)
+
+
+## How can I recreate the figures in the project paper?
+
+1. Download and extract the repo on your local machine. 
+
+1. Download the preprocessed data from my S3 bucket and overwrite the files in the `data-model/` directory.  
+
+1. Open `R/gen-figures-and-model.R` and change the `ROOT` variable (on line 20) to the extracted repo's filepath. 
+
+1. Run the script (`ctrl + shift + enter` if using RStudio). 
+
+Note that there is a large, commented out section where we calculate model perplexity for some values of `k`. This section takes 2 hours or more to run, so leave it commented unless you're really curious. 
